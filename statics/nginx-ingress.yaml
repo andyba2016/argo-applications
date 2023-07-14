@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: production-alb
+  namespace: api
+  annotations:
+    alb.ingress.kubernetes.io/load-balancer-name: production-alb
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: production-external
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /statics.html
+            pathType: Exact
+            backend:
+              service:
+                name: nginx-service
+                port:
+                  number: 80
