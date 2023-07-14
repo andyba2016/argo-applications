@@ -15,8 +15,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /api
-            pathType: Prefix
+          - path: /api*
             backend:
               service:
                 name: api-service
