@@ -16,6 +16,7 @@ spec:
     - http:
         paths:
           - path: /api*
+            pathType: Exact
             backend:
               service:
                 name: api-service
