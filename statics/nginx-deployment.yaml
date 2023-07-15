@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: andresbsas2023/nginx-show-environment:prod
+        image: andresbsas2023/nginx-show-environment:dev
         ports:
         - containerPort: 80
         imagePullPolicy: Always
