@@ -1,10 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: production-alb
+  name: development-alb
   namespace: nginx
   annotations:
-    alb.ingress.kubernetes.io/load-balancer-name: production-alb
+    alb.ingress.kubernetes.io/load-balancer-name: development-alb
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
